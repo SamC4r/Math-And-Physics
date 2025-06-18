@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+
+\title{Notes on Chapter 1.2: Some Preliminaries}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Sets}
+\begin{itemize}
+    \item A \textbf{set} is any collection of objects (elements)
+    \item Notation:
+    \begin{itemize}
+        \item $x \in A$: $x$ is an element of $A$
+        \item $x \notin A$: $x$ is not an element of $A$
+    \end{itemize}
+    \item Operations:
+    \begin{itemize}
+        \item Union: $A \cup B = \{x : x \in A \text{ or } x \in B\}$
+        \item Intersection: $A \cap B = \{x : x \in A \text{ and } x \in B\}$
+        \item Complement: $A^c = \{x \in \mathbb{R} : x \notin A\}$
+    \end{itemize}
+    
+    \item \textbf{Example 1.2.1}:
+    \begin{itemize}
+        \item Let $A = \{1,2,3\}, B = \{2,4,6\}$
+        \item $A \cup B = \{1,2,3,4,6\}$
+        \item $A \cap B = \{2\}$
+        \item If universal set is $\mathbb{N}$, then $A^c = \{4,5,6,\ldots\}$
+    \end{itemize}
+\end{itemize}
+
+\section{Functions}
+\begin{itemize}
+    \item A \textbf{function} $f : A \to B$ is a rule associating each $x \in A$ to a single element of $B$
+    \item Key properties:
+    \begin{itemize}
+        \item \textbf{One-to-one (1-1)}: $a_1 \neq a_2$ implies $f(a_1) \neq f(a_2)$
+        \item \textbf{Onto}: For every $b \in B$, there exists $a \in A$ with $f(a) = b$
+    \end{itemize}
+    
+    \item \textbf{Example 1.2.4} (Dirichlet's function):
+    \[
+    g(x) = 
+    \begin{cases} 
+    1 & \text{if } x \in \mathbb{Q} \\
+    0 & \text{if } x \notin \mathbb{Q} 
+    \end{cases}
+    \]
+    This function is:
+    \begin{itemize}
+        \item Not one-to-one (both 1 and 2 map to 1)
+        \item Not onto if codomain is $\mathbb{R}$ (no $x$ maps to 2)
+    \end{itemize}
+\end{itemize}
+
+\section{Absolute Value and Triangle Inequality}
+\begin{itemize}
+    \item Absolute value definition:
+    \[
+    |x| = 
+    \begin{cases} 
+    x & \text{if } x \geq 0 \\
+    -x & \text{if } x < 0 
+    \end{cases}
+    \]
+    \item Properties:
+    \begin{itemize}
+        \item $|ab| = |a||b|$
+        \item $|a + b| \leq |a| + |b|$ (Triangle Inequality)
+        \item $|a - b| \leq |a - c| + |c - b|$
+    \end{itemize}
+    
+    \item \textbf{Example}:
+    \begin{itemize}
+        \item $|-3| = 3$
+        \item $|2 \cdot (-5)| = |2| \cdot |-5| = 10$
+        \item For $a = 1, b = -2$: $|1 + (-2)| = 1 \leq |1| + |-2| = 3$
+    \end{itemize}
+\end{itemize}
+
+\section{Logic and Proofs}
+\begin{itemize}
+    \item \textbf{Proof by contradiction}: Assume the opposite of what you want to prove and find a contradiction
+    
+    \item \textbf{Example 1.2.6} (Uniqueness of limits):
+    \begin{itemize}
+        \item Assume $\lim a_n = a$ and $\lim a_n = b$ with $a \neq b$
+        \item Take $\epsilon = |a - b|/2$
+        \item By definition, $\exists N_1$ such that $n \geq N_1 \implies |a_n - a| < \epsilon$
+        \item And $\exists N_2$ such that $n \geq N_2 \implies |a_n - b| < \epsilon$
+        \item For $n \geq \max\{N_1, N_2\}$:
+        \[
+        |a - b| \leq |a - a_n| + |a_n - b| < 2\epsilon = |a - b|
+        \]
+        \item Contradiction: $|a - b| < |a - b|$
+    \end{itemize}
+\end{itemize}
+
+\section{Induction}
+\begin{itemize}
+    \item \textbf{Principle of Induction}:
+    \begin{enumerate}
+        \item Show statement holds for $n = 1$ (base case)
+        \item Assume holds for $n$, prove for $n + 1$ (inductive step)
+    \end{enumerate}
+    
+    \item \textbf{Example 1.2.7}:
+    \begin{itemize}
+        \item Define $x_1 = 1$, $x_{n+1} = \frac{1}{2}x_n + 1$
+        \item \textbf{Claim}: $x_n \leq x_{n+1}$ for all $n \in \mathbb{N}$
+        \item \textbf{Base case}: $x_1 = 1 \leq 1.5 = x_2$
+        \item \textbf{Inductive step}: Assume $x_n \leq x_{n+1}$
+        \[
+        x_{n+2} = \frac{1}{2}x_{n+1} + 1 \geq \frac{1}{2}x_n + 1 = x_{n+1}
+        \]
+    \end{itemize}
+\end{itemize}
+
+\end{document}

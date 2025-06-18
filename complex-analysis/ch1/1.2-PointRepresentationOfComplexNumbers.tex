@@ -1,0 +1,138 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amssymb}
+
+\title{Point Representation in the Complex Plane}
+\author{Samuel Caraballo Chichiraldi}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{The Complex Plane}
+
+When using geometry to represent complex numbers, we place them on a two-dimensional coordinate system known as the \textbf{complex plane}, or the \textbf{$z$-plane}.
+
+\begin{itemize}
+    \item The horizontal axis (real axis) represents real numbers.
+    \item The vertical axis (imaginary axis) represents imaginary numbers.
+\end{itemize}
+
+A complex number \( z = a + bi \), where \( a, b \in \mathbb{R} \), is associated with the point \( (a, b) \) in this plane. This point is often simply denoted by \( z \).
+
+\section*{Absolute Value (Modulus)}
+
+The \textbf{absolute value} or \textbf{modulus} of a complex number \( z = a + bi \) is its distance from the origin \( (0, 0) \) in the complex plane. By the Pythagorean Theorem:
+\begin{equation}
+|z| = \sqrt{a^2 + b^2}
+\label{eq:modulus}
+\end{equation}
+
+\textbf{Example:}
+\[
+|3 - 4i| = \sqrt{3^2 + (-4)^2} = \sqrt{9 + 16} = \sqrt{25} = 5
+\]
+
+\textbf{Note:} The modulus \( |z| \) is always a non-negative real number.
+
+\subsection*{Distance Between Two Complex Numbers}
+
+Given two complex numbers \( z_1 = a_1 + b_1i \) and \( z_2 = a_2 + b_2i \), the distance between them in the complex plane is:
+\begin{equation}
+|z_1 - z_2| = \sqrt{(a_1 - a_2)^2 + (b_1 - b_2)^2}
+\label{eq:distance}
+\end{equation}
+
+\section*{Geometric Interpretation}
+
+The geometric representation of modulus is useful for describing loci (sets of points) in the complex plane.
+
+\subsection*{Circles in the Complex Plane}
+
+The set of all complex numbers \( z \) satisfying the equation
+\begin{equation}
+|z - z_0| = r
+\label{eq:circle}
+\end{equation}
+represents a \textbf{circle} of radius \( r \) centered at \( z_0 \in \mathbb{C} \). This includes all points whose distance from \( z_0 \) is exactly \( r \).
+
+\textbf{Example:}
+Consider the equation:
+\[
+|z + 2| = |z - 1|
+\]
+This means the point \( z \) is equidistant from \( -2 \) and \( 1 \) on the real axis. Let \( z = x + iy \), then:
+\[
+|x + iy + 2| = |x + iy - 1| \\
+\Rightarrow (x + 2)^2 + y^2 = (x - 1)^2 + y^2 \\
+\Rightarrow x + 2 = -x + 1 \\
+\Rightarrow x = -\frac{1}{2}
+\]
+This describes a vertical line \( x = -\frac{1}{2} \) in the complex plane.
+
+\section*{Complex Conjugate}
+
+The \textbf{complex conjugate} of a complex number \( z = a + bi \) is defined as:
+\begin{equation}
+\overline{z} = a - bi
+\label{eq:conjugate}
+\end{equation}
+
+\textbf{Example:}
+\[
+\overline{-1 + 2i} = -1 - 2i
+\]
+
+\textbf{Properties:}
+\begin{itemize}
+    \item If \( z \in \mathbb{R} \), then \( \overline{z} = z \).
+    \item Conjugation distributes over addition and subtraction:
+    \begin{equation}
+    \overline{z_1 + z_2} = \overline{z_1} + \overline{z_2}, \quad 
+    \overline{z_1 - z_2} = \overline{z_1} - \overline{z_2}
+    \label{eq:conj_add_sub}
+    \end{equation}
+    \item Conjugation distributes over multiplication and division:
+    \begin{equation}
+    \overline{z_1 z_2} = \overline{z_1} \cdot \overline{z_2}, \quad
+    \overline{\left(\frac{z_1}{z_2}\right)} = \frac{\overline{z_1}}{\overline{z_2}} \quad (z_2 \ne 0)
+    \label{eq:conj_mult_div}
+    \end{equation}
+\end{itemize}
+
+\subsection*{Extracting Real and Imaginary Parts}
+
+For any complex number \( z \), the real and imaginary parts can be written as:
+\begin{equation}
+\operatorname{Re}(z) = \frac{z + \overline{z}}{2}, \qquad 
+\operatorname{Im}(z) = \frac{z - \overline{z}}{2i}
+\label{eq:re_im}
+\end{equation}
+
+\section*{Product with the Conjugate}
+
+Multiplying a complex number by its conjugate yields:
+\begin{equation}
+z \cdot \overline{z} = |z|^2
+\label{eq:product_conjugate}
+\end{equation}
+
+\section*{Rationalizing with the Conjugate}
+
+To divide complex numbers, especially when the denominator is complex, we use the conjugate to rationalize:
+
+\begin{equation}
+\frac{z_1}{z_2} = \frac{z_1 \cdot \overline{z}_2}{z_2 \cdot \overline{z}_2} = \frac{z_1 \cdot \overline{z}_2}{|z_2|^2}, \quad z_2 \ne 0
+\label{eq:division}
+\end{equation}
+
+\textbf{Special case:}
+\begin{equation}
+\frac{1}{z} = \frac{\overline{z}}{|z|^2}, \quad z \ne 0
+\label{eq:reciprocal}
+\end{equation}
+
+\end{document}
+
