@@ -1,0 +1,46 @@
+\documentclass[11pt]{article}
+
+\usepackage{sectsty}
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\title{Some of my solutions to understanding analysis chapter 2 first edition}
+\author{ Samuel Caraballo Chichiraldi }
+\date{\today}
+
+\begin{document}
+\maketitle	
+\pagebreak
+
+% Optional TOC
+% \tableofcontents
+% \pagebreak
+
+%--Paper--
+
+\section*{Problem 2.3.3}
+
+We want to prove that there's an $N \in \mathbb{N}$ such that. 
+$$|y_n - l | < \epsilon$$ for any choice of $\epsilon > 0$. \\
+\\
+As $(x_n) \rightarrow l$ there's an $N_1 \in \mathbb{N}$ such that $|x_n - l | < \epsilon_1$ for any choice of $\epsilon_1 > 0$.\\
+Likewise for $z_n$ --- there's an $N_2 \in \mathbb{N}$ such that $|z_n - l | < \epsilon_2$ for any choice of $\epsilon_2 > 0$.\\ 
+\\
+Now, we can let those epsilons $\epsilon_1, \epsilon_2$ be equal to epsilon. $\epsilon_1 = \epsilon_2 = \epsilon$. If we could find $N_1$ and $N_2$ for $\epsilon_1$ and $\epsilon_2$, we can also find them for the epsilon we are interested in for $y_n$ because the definition guarantees it.\\
+
+By definition we know that $z_n$ is inside $(-\epsilon + l, \epsilon + l)$ for some $N_2$. Or $-\epsilon + l < z_n < \epsilon + l$. Because $y_n \le  z_n $ $ \Rightarrow y_n < \epsilon + l$.\\ 
+
+Likewise for $x_n$ in which we obtain $y_n > -\epsilon + l$. Therefore there exists an $N$, namely $N=max(N1,N2)$ (to make sure both inequalities hold) such that $y_n$ is inside the epsilon neighbourhood. This means that there's a limit for $y_n$ and it is $l$.
+
+
+
+\end{document}
