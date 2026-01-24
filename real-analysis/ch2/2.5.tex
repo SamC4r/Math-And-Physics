@@ -1,0 +1,48 @@
+\documentclass[11pt]{article}
+
+\usepackage{sectsty}
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\title{Some of my solutions to understanding analysis chapter 2 first edition}
+\author{ Samuel Caraballo Chichiraldi }
+\date{\today}
+
+\begin{document}
+\maketitle	
+\pagebreak
+
+% Optional TOC
+% \tableofcontents
+% \pagebreak
+
+%--Paper--
+
+\section*{Problem 2.5.6} 
+
+Let $s$ be the supremum of the set $S$. This means that for any $\epsilon > 0$ there exists a $s' \in S$ such that $s' > s-\epsilon$.  Due to the definition of $S$, for $s'$ to exist there must be a subsequence with infinitely many terms greater than $s'$. Let this subsequence be $a_{n_k}$. If  $a_{n_k}$ exists there is a $k_0$ such that  $a_{n_k} > s'$ whenever $k\ge k_0$. \\
+
+With this inequality we get to: 
+ $$a_{n_k} > s' > s - \epsilon \Rightarrow a_{n_k} > s - \epsilon$$.
+
+ With this we get a lower bound for $a_{n_k}$.
+
+Now, as $s$ is upper bound this means that $s\ge x$ $\forall x \in S$. For the purpose of contradiction let's assume that  for every $\epsilon > 0$ there's a subsequence with infinitely many terms bigger than $s + \epsilon$. This means that there exists a $k_1$ such that $a_{n_{k}} > s + \epsilon$ whenever $k \ge  k_1$.
+
+This in turn implies that $s + \epsilon$ is an element of the set $S$. However as we assumed that $s$ is an uppebound, $s \ge  x$ $\forall x \in S$ but $s < s + \epsilon$. This is a contradiction and thus there is no subsequence with infinitely many terms bigger than the supremum.\\
+
+That is, there exists a $k_1$ such that $a_{n_{k}} \le  s + \epsilon$ whenever $k \ge  k_1$.\\
+
+Therefore, for every $\epsilon > 0$ we can select a number $K$, namely $K = \max(k_0,k_1)$ such that $s - \epsilon \le  a_{n_{k}} \le  s + \epsilon$, or $|a_{n_{k}} - s| < \epsilon$. So there's a convergent subsequence with limit $s$.
+ 
+
+\end{document}

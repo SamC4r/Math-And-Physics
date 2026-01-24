@@ -1,0 +1,53 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\title{Preliminaries}
+\author{Samuel Caraballo Chichiraldi}
+\date{\today}
+
+\begin{document}
+    \maketitle
+
+    \section*{Sets}
+    Collection of objects called elements.  We write $x \in A$ if $x$ is an element of $A$.  \\
+
+
+    \textbf{De Morgan's Law}
+    \begin{itemize}
+        
+    \item \[ \overline{A \cup B} = \overline{A} \cap \overline{B} \] 
+
+    \item \[ \overline{A \cap B} = \overline{A} \cup \overline{B} \] 
+    \end{itemize}
+
+
+    \section*{Functions}
+
+\textbf{Definition}: Given two sets $A$ and $B$, a function from $A$ to $B$ is a rule that takes each element $x \in A$ and associates with it a single element of $B$.  In that case we write: 
+    \begin{align*}
+        f: A &\longrightarrow B \\
+    \end{align*}
+
+    Given an element $x$, the expression $f(x)$ is used to represent the element of $B$ associated with $x$ by $f$. 
+    The set $A$ is called the \textit{\textbf{domain}} of $f$. The \textit{\textbf{range}} of $f$ refers to the subset of $B$ given by $\{y \in B  :  y = f(x) \text{ for some } x \in A\} $
+
+    Dirichlet’s definition of function liberates the term from its interpretation as a type of “formula.”
+
+\end{document}
